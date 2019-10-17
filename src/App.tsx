@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import StreetView from './components/StreetView'
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      style={{
+        width: '100vw',
+        height: '100vh',
+        backgroundColor: '#eeeeee',
+      }}
+    >
+      <StreetView
+        coordinates={{
+          lat: 46.9171876,
+          lng: 17.8951832,
+        }}
+      />
     </div>
   );
 }
