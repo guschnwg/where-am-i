@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState, useContext } from  'react'
+import { Resizable } from 're-resizable'
 import { Point } from '../types'
 import MapsContext from '../context/Maps'
 
@@ -38,6 +39,8 @@ const Guess: React.FC<GuessProps> = ({ point, onGuessed }) => {
       const mapOptions = {
         zoom: 1,
         center,
+        streetViewControl: false,
+        fullscreenControl: false,
       }
       const map = new google.maps.Map(ref.current, mapOptions)
 
@@ -80,31 +83,41 @@ const Guess: React.FC<GuessProps> = ({ point, onGuessed }) => {
   }
 
   return (
-    <div
-      style={{
-        position: 'relative',
-        height: '100%',
+    <Resizable
+      defaultSize={{
+        width: 320,
+        height: 200,
       }}
+      minHeight={200}
+      minWidth={200}
     >
       <div
-        ref={ref}
         style={{
-          height: '100%',
+          position: 'relative',
+          height: '90%',
         }}
-      />
+        >
+        <div
+          ref={ref}
+          style={{
+            height: '100%',
+          }}
+          />
 
-      <button
-        style={{
-          position: 'absolute',
-          bottom: '0',
-          left: '10px',
-          width: 'calc(100% - 20px)'
-        }}
-        onClick={handleConfirmGuess}
-      >
-        Confirm guess
-      </button>
-    </div>
+        <button
+          style={{
+            position: 'absolute',
+            bottom: '-10%',
+            left: '10px',
+            width: 'calc(100% - 20px)',
+            height: '10%',
+          }}
+          onClick={handleConfirmGuess}
+          >
+          Confirm guess
+        </button>
+      </div>
+    </Resizable>
   )
 }
 
