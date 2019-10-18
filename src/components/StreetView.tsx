@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { Google, LatLng } from '../types'
+import React, { useEffect, useRef, useState, useContext } from 'react'
+import { LatLng } from '../types'
+import MapsContext from '../context/Maps'
 
 const streetViewPanoramaOptions = {
   addressControl: false,
@@ -15,10 +16,10 @@ const streetViewPanoramaOptions = {
 
 interface StreetViewProps {
   coordinates: LatLng
-  google: Google
 }
 
-const StreetView: React.FC<StreetViewProps> = ({ coordinates, google }) => {
+const StreetView: React.FC<StreetViewProps> = ({ coordinates }) => {
+  const { google } = useContext(MapsContext)
   const ref = useRef(null)
   const [instance, setInstance] = useState()
 
