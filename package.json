@@ -2,11 +2,13 @@
   "name": "where-am-i",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://guschnwg.github.io/where-am-i",
   "dependencies": {
     "@types/jest": "24.0.19",
     "@types/node": "12.11.1",
     "@types/react": "16.9.7",
     "@types/react-dom": "16.9.2",
+    "gh-pages": "^2.1.1",
     "random-js": "^2.1.0",
     "re-resizable": "^6.1.0",
     "react": "^16.10.2",
@@ -19,7 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
