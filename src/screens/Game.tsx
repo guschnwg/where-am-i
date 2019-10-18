@@ -75,12 +75,10 @@ const GameScreen: React.FC = () => {
 
       <div
         style={{
-          width: '20vw',
-          height: '20vh',
           backgroundColor: '#eeeeee',
           position: 'absolute',
-          right: '0',
-          bottom: '0',
+          right: '20px',
+          bottom: '20px',
           zIndex: 2,
         }}
       >
