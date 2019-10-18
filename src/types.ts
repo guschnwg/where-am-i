@@ -5,10 +5,14 @@ export interface Google {
     LatLng: any
     Map: any
     Marker: any
+    Polyline: any
     geometry: {
       spherical: {
         computeDistanceBetween: any
       }
+    }
+    event: {
+      clearListeners: any
     }
   }
 }

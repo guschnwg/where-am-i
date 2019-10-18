@@ -1,12 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { Google, Point } from '../types'
+import React, { useEffect, useRef, useState, useContext } from 'react'
+import { Point } from '../types'
+import MapsContext from '../context/Maps'
 
 interface MapsProps {
   points: Point[]
-  google: Google
 }
 
-const Maps: React.FC<MapsProps> = ({ points, google }) => {
+const Maps: React.FC<MapsProps> = ({ points }) => {
+  const { google } = useContext(MapsContext)
   const ref = useRef(null)
   const [map, setMap] = useState(undefined)
 

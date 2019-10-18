@@ -1,16 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Random, browserCrypto } from 'random-js'
 import StreetView from '../components/StreetView'
-import Maps from '../components/Maps'
-import { Google } from '../types'
-
-interface GameScreenProps {
-  google: Google
-}
+import Guess from '../components/Guess'
+import MapsContext from '../context/Maps'
 
 const random = new Random(browserCrypto)
 
-const GameScreen: React.FC<GameScreenProps> = ({ google }) => {
+const GameScreen: React.FC = () => {
+  const { google } = useContext(MapsContext)
+
   const [coordinates, setCoordinates] = useState(new google.maps.LatLng(-13.1630646, -72.5448514))
   const [points, setPoints] = useState([{
     position: coordinates,
@@ -65,27 +63,30 @@ const GameScreen: React.FC<GameScreenProps> = ({ google }) => {
     >
       <div
         style={{
-          width: '50vw',
+          width: '100vw',
           height: '100vh',
           backgroundColor: '#eeeeee',
         }}
       >
         <StreetView
-          google={google}
           coordinates={coordinates}
         />
       </div>
 
       <div
         style={{
-          width: '50vw',
-          height: '100vh',
+          width: '20vw',
+          height: '20vh',
           backgroundColor: '#eeeeee',
+          position: 'absolute',
+          right: '0',
+          bottom: '0',
+          zIndex: 2,
         }}
       >
-        <Maps
-          google={google}
-          points={points}
+        <Guess
+          point={coordinates}
+          onGuessed={tryRandomPlace}
         />
       </div>
 
