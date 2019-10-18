@@ -1,9 +1,6 @@
-import React, { useEffect, useRef } from 'react'
-// @ts-ignore
-import makeAsyncScriptLoader from 'react-async-script'
+import React, { useEffect, useRef, useState } from 'react'
+import { Google, LatLng } from '../types'
 
-const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY
-const URL = 'https://maps.googleapis.com/maps/api/js?key=' + API_KEY
 const streetViewPanoramaOptions = {
   addressControl: false,
   addressControlOptions: false,
@@ -17,31 +14,21 @@ const streetViewPanoramaOptions = {
 }
 
 interface StreetViewProps {
-  coordinates: {
-    lat: number,
-    lng: number,
-  }
-  google?: {
-    maps?: {
-      StreetViewPanorama: any
-    }
-  }
+  coordinates: LatLng
+  google: Google
 }
 
 const StreetView: React.FC<StreetViewProps> = ({ coordinates, google }) => {
   const ref = useRef(null)
+  const [instance, setInstance] = useState()
 
   useEffect(() => {
-    if (google && google.maps) {
-      new google.maps.StreetViewPanorama(
-        ref.current,
-        {
-          position: coordinates,
-          ...streetViewPanoramaOptions,
-        }
-      );
+    if (!instance) {
+      setInstance(new google.maps.StreetViewPanorama(ref.current, streetViewPanoramaOptions))
+    } else {
+      instance.setPosition(coordinates)
     }
-  }, [google, coordinates])
+  }, [google.maps.StreetViewPanorama, instance, coordinates])
 
   return (
     <div
@@ -53,6 +40,4 @@ const StreetView: React.FC<StreetViewProps> = ({ coordinates, google }) => {
   )
 }
 
-export default makeAsyncScriptLoader(URL, {
-  globalName: 'google',
-})(StreetView)
+export default StreetView
