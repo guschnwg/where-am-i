@@ -4,9 +4,7 @@ import MapsContext from '../context/Maps'
 
 const streetViewPanoramaOptions = {
   addressControl: false,
-  addressControlOptions: false,
   showRoadLabels: false,
-  disableDefaultUI: true,
   pov: {
     heading: 100,
     pitch: 0,

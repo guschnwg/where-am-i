@@ -41,6 +41,7 @@ const Guess: React.FC<GuessProps> = ({ point, onGuessed }) => {
         center,
         streetViewControl: false,
         fullscreenControl: false,
+        mapTypeControl: false,
       }
       const map = new google.maps.Map(ref.current, mapOptions)
 
@@ -87,7 +88,7 @@ const Guess: React.FC<GuessProps> = ({ point, onGuessed }) => {
       style={{
         backgroundColor: '#eeeeee',
         position: 'absolute',
-        right: '2vw',
+        left: '2vw',
         bottom: '20px',
         zIndex: 2,
         border: '2px solid red',
