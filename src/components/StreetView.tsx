@@ -33,11 +33,19 @@ const StreetView: React.FC<StreetViewProps> = ({ coordinates }) => {
 
   return (
     <div
-      ref={ref}
       style={{
-        height: '100%',
+        width: '100vw',
+        height: '100vh',
+        backgroundColor: '#eeeeee',
       }}
-    />
+    >
+      <div
+        ref={ref}
+        style={{
+          height: '100%',
+        }}
+      />
+    </div>
   )
 }
 

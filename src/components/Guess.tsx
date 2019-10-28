@@ -83,41 +83,58 @@ const Guess: React.FC<GuessProps> = ({ point, onGuessed }) => {
   }
 
   return (
-    <Resizable
-      defaultSize={{
-        width: 320,
-        height: 200,
+    <div
+      style={{
+        backgroundColor: '#eeeeee',
+        position: 'absolute',
+        right: '2vw',
+        bottom: '20px',
+        zIndex: 2,
+        border: '2px solid red',
       }}
-      minHeight={200}
-      minWidth={200}
     >
-      <div
-        style={{
-          position: 'relative',
-          height: '90%',
+      <Resizable
+        defaultSize={{
+          width: 320,
+          height: 200,
         }}
-        >
+        minHeight={200}
+        minWidth={200}
+        maxHeight="30vh"
+        maxWidth="96vw"
+      >
         <div
-          ref={ref}
           style={{
+            position: 'relative',
             height: '100%',
           }}
+        >
+          <div
+            ref={ref}
+            style={{
+              height: '100%',
+            }}
           />
 
-        <button
-          style={{
-            position: 'absolute',
-            bottom: '-10%',
-            left: '10px',
-            width: 'calc(100% - 20px)',
-            height: '10%',
-          }}
-          onClick={handleConfirmGuess}
-          >
-          Confirm guess
-        </button>
-      </div>
-    </Resizable>
+          {
+            guess && (
+              <button
+                style={{
+                  position: 'absolute',
+                  bottom: '0',
+                  left: '10px',
+                  width: 'calc(100% - 20px)',
+                  height: '20px',
+                }}
+                onClick={handleConfirmGuess}
+                >
+                Confirm guess
+              </button>
+            )
+          }
+        </div>
+      </Resizable>
+    </div>
   )
 }
 

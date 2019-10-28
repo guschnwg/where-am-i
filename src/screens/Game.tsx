@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { Random, browserCrypto } from 'random-js'
 import StreetView from '../components/StreetView'
 import Guess from '../components/Guess'
@@ -9,14 +9,14 @@ const random = new Random(browserCrypto)
 const GameScreen: React.FC = () => {
   const { google } = useContext(MapsContext)
 
-  const [coordinates, setCoordinates] = useState(new google.maps.LatLng(-13.1630646, -72.5448514))
+  const [coordinates, setCoordinates] = useState()
   const [points, setPoints] = useState([{
     position: coordinates,
     icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
   }])
 
   const tryRandomPlace = () => {
-    const lat = random.real(-90, 90)
+    const lat = random.real(-60, 77)
     const lng = random.real(-180, 180)
 
     const service = new google.maps.StreetViewService()
@@ -54,6 +54,10 @@ const GameScreen: React.FC = () => {
     })
   }
 
+  useEffect(() => {
+    tryRandomPlace()
+  }, [])
+
   return (
     <div
       style={{
@@ -61,44 +65,14 @@ const GameScreen: React.FC = () => {
         display: 'flex',
       }}
     >
-      <div
-        style={{
-          width: '100vw',
-          height: '100vh',
-          backgroundColor: '#eeeeee',
-        }}
-      >
-        <StreetView
-          coordinates={coordinates}
-        />
-      </div>
+      <StreetView
+        coordinates={coordinates}
+      />
 
-      <div
-        style={{
-          backgroundColor: '#eeeeee',
-          position: 'absolute',
-          right: '20px',
-          bottom: '20px',
-          zIndex: 2,
-        }}
-      >
-        <Guess
-          point={coordinates}
-          onGuessed={tryRandomPlace}
-        />
-      </div>
-
-      <button
-        style={{
-          position: 'absolute',
-          top: '10%',
-          left: '10%',
-          zIndex: 2,
-        }}
-        onClick={tryRandomPlace}
-      >
-        Random place
-      </button>
+      <Guess
+        point={coordinates}
+        onGuessed={tryRandomPlace}
+      />
     </div>
   )
 }
