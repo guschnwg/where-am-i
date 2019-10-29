@@ -19,20 +19,22 @@ const Guess: React.FC<GuessProps> = ({ point, onGuessed }) => {
 
   useEffect(() => {
     if (guess) {
-      if (marker) {
-        marker.setMap(null)
-      }
+      setMarker((oldMarker: any) => {
+        if (oldMarker) {
+          oldMarker.setMap(null)
+        }
 
-      const newGuess = new google.maps.Marker({
-        position: guess,
+        const newMarker = new google.maps.Marker({
+          position: guess,
+        })
+  
+        newMarker.setMap(map)
+
+        return newMarker
       })
-
-      newGuess.setMap(map)
-
-      setMarker(newGuess)
     }
   }, [google.maps.Marker, guess, map])
-  
+
   useEffect(() => {
     if (!map) {
       const center = new google.maps.LatLng(0, 0)
