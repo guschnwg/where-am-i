@@ -12,7 +12,9 @@ import { MapsContextProvider } from './context/Maps'
 const App: React.FC = () => {
   return (
     <MapsContextProvider>
-      <Router>
+      <Router
+        basename="/where-am-i"
+      >
         <Switch>
           <Route path="/guessing">
             <GameScreen />
