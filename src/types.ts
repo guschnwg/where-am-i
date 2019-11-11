@@ -14,6 +14,9 @@ export interface Google {
     event: {
       clearListeners: any
     }
+    ControlPosition: {
+      TOP_RIGHT: number
+    }
   }
 }
 

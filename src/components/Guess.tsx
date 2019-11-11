@@ -1,14 +1,16 @@
 import React, { useEffect, useRef, useState, useContext } from  'react'
-import { Resizable } from 're-resizable'
 import { Point } from '../types'
 import MapsContext from '../context/Maps'
+import '../styles/components/Guess.css'
 
 interface GuessProps {
+  mapClassName: string
+  containerClassName: string
   point: Point
   onGuessed: () => void
 }
 
-const Guess: React.FC<GuessProps> = ({ point, onGuessed }) => {
+const Guess: React.FC<GuessProps> = ({ mapClassName, containerClassName, point, onGuessed }) => {
   const { google } = useContext(MapsContext)
 
   const ref = useRef(null)
@@ -39,11 +41,15 @@ const Guess: React.FC<GuessProps> = ({ point, onGuessed }) => {
     if (!map) {
       const center = new google.maps.LatLng(0, 0)
       const mapOptions = {
-        zoom: 1,
+        zoom: 3,
+        minZoom: 2,
         center,
         streetViewControl: false,
         fullscreenControl: false,
         mapTypeControl: false,
+        zoomControlOptions: {
+          position: google.maps.ControlPosition.TOP_RIGHT,
+        },
       }
       const map = new google.maps.Map(ref.current, mapOptions)
 
@@ -53,7 +59,13 @@ const Guess: React.FC<GuessProps> = ({ point, onGuessed }) => {
 
       setMap(map)
     }
-  }, [google.maps.Map, google.maps.LatLng, google.maps.Marker, map])
+  }, [
+    google.maps.Map,
+    google.maps.LatLng,
+    google.maps.Marker,
+    google.maps.ControlPosition.TOP_RIGHT,
+    map,
+  ])
 
   const handleConfirmGuess = () => {
     marker.setMap(null)
@@ -87,56 +99,38 @@ const Guess: React.FC<GuessProps> = ({ point, onGuessed }) => {
 
   return (
     <div
+      className={containerClassName}
       style={{
-        backgroundColor: '#eeeeee',
-        position: 'absolute',
-        left: '2vw',
-        bottom: '20px',
-        zIndex: 2,
-        border: '2px solid red',
+        position: 'relative',
+        height: '100%',
+        width: '100%',
       }}
     >
-      <Resizable
-        defaultSize={{
-          width: 320,
-          height: 200,
+      <div
+        ref={ref}
+        className={mapClassName}
+        style={{
+          height: '100%',
+          width: '100%',
         }}
-        minHeight={200}
-        minWidth={200}
-        maxHeight="30vh"
-        maxWidth="96vw"
-      >
-        <div
-          style={{
-            position: 'relative',
-            height: '100%',
-          }}
-        >
-          <div
-            ref={ref}
-            style={{
-              height: '100%',
-            }}
-          />
+      />
 
-          {
-            guess && (
-              <button
-                style={{
-                  position: 'absolute',
-                  bottom: '0',
-                  left: '10px',
-                  width: 'calc(100% - 20px)',
-                  height: '20px',
-                }}
-                onClick={handleConfirmGuess}
-                >
-                Confirm guess
-              </button>
-            )
-          }
-        </div>
-      </Resizable>
+      {
+        guess && (
+          <button
+            className="guess-confirm"
+            style={{
+              position: 'absolute',
+              bottom: '10px',
+              left: '10px',
+              width: 'calc(100% - 20px)',
+            }}
+            onClick={handleConfirmGuess}
+            >
+            GUESS
+          </button>
+        )
+      }
     </div>
   )
 }

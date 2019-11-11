@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect, useCallback } from 'react'
 import StreetView from '../components/StreetView'
 import Guess from '../components/Guess'
 import MapsContext from '../context/Maps'
+import '../styles/screens/Game.css'
 
 const GameScreen: React.FC = () => {
   const { randomStreetView } = useContext(MapsContext)
@@ -17,23 +18,30 @@ const GameScreen: React.FC = () => {
 
   return (
     <div
-      style={{
-        display: 'flex',
-        position: 'fixed',
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
-      }}
+      className="container"
     >
-      <StreetView
-        coordinates={coordinates}
-      />
+      <h1
+        className="title"
+      >
+        Where Am I?
+      </h1>
 
-      <Guess
-        point={coordinates}
-        onGuessed={tryRandomPlace}
-      />
+      <div
+        className="game-container"
+      >
+        <StreetView
+          containerClassName="street-view-container"
+          mapClassName="street-view-map"
+          coordinates={coordinates}
+        />
+
+        <Guess
+          containerClassName="guess-container"
+          mapClassName="guess-map"
+          point={coordinates}
+          onGuessed={tryRandomPlace}
+        />
+      </div>
     </div>
   )
 }

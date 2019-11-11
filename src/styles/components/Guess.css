@@ -1,0 +1,10 @@
+.guess-confirm {
+    font-family: 'Irish Grover', cursive;
+    background: #c19a6b;
+    color: white;
+    margin-top: 20px;
+    font-size: 48px;
+    border-radius: 10px;
+    border: 2px solid burlywood;
+    cursor: pointer;
+}

@@ -13,10 +13,12 @@ const streetViewPanoramaOptions = {
 }
 
 interface StreetViewProps {
+  containerClassName?: string
+  mapClassName?: string
   coordinates: LatLng
 }
 
-const StreetView: React.FC<StreetViewProps> = ({ coordinates }) => {
+const StreetView: React.FC<StreetViewProps> = ({ mapClassName, containerClassName, coordinates }) => {
   const { google } = useContext(MapsContext)
   const ref = useRef(null)
   const [instance, setInstance] = useState()
@@ -31,14 +33,15 @@ const StreetView: React.FC<StreetViewProps> = ({ coordinates }) => {
 
   return (
     <div
+    className={containerClassName}
       style={{
         width: '100%',
         height: '100%',
-        backgroundColor: '#eeeeee',
       }}
     >
       <div
         ref={ref}
+        className={mapClassName}
         style={{
           height: '100%',
         }}
