@@ -1,0 +1,27 @@
+.tips {
+    background: url(../../assets/background.jpg);
+    overflow: auto;
+}
+
+.tips > h2 {
+    color: white;
+    font-family: 'Irish Grover', cursive;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.tips > ol {
+    margin: 0;
+    padding-block-start: 20px;
+    padding-block-end: 20px;
+    padding-right: 10px;
+}
+
+.tips > ol > li {
+    color: white;
+    font-family: 'Irish Grover', cursive;
+    font-size: 24px;
+    padding: 10px 0;
+}

@@ -1,46 +1,42 @@
 .container {
-    display: flex;
-    flex-direction: column;
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
 
-    padding: 20px 50px;
-
-    background-image: url('./background.jpg');
-}
-
-.title {
-    font-family: 'Irish Grover', cursive;
-    text-align: center;
-    color: white;
-    font-size: 48px;
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-.game-container {
-    height: 100%;
-    display: flex;
+    border: 5px solid burlywood;
 }
 
 .street-view-container {
-    flex: 3;
-    width: 75%;
-    margin-right: 10px;
 }
-.street-view-map {
-    border-radius: 10px;
-    border: 2px solid burlywood;
-}
+
 .guess-container {
-    flex: 1;
-    width: 25%;
-    margin-left: 10px;
+    position: absolute !important;
+    top: 25%;
+    right: -5px;
+    height: 50% !important;
+    z-index: 1;
 }
-.guess-map {
-    border-radius: 10px;
-    border: 2px solid burlywood;
+
+.guess-container > div {
+    height: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 5px solid burlywood;
+    border-right: none;
+}
+
+.tips-container {
+    position: absolute !important;
+    left: -5px;
+    top: 5%;
+    width: 20%;
+    height: 90%;
+    z-index: 1;
+
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 5px solid burlywood;
+    border-left: none;
 }

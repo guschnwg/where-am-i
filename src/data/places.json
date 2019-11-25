@@ -1,0 +1,172 @@
+[
+    {
+        "id": 0,
+        "coordinates": {
+            "lat": 51.4041827,
+            "lng": 30.0429179
+        },
+        "name": "Pripyat",
+        "country": "Ukraine",
+        "description": "",
+        "tips": [
+            "Nona cidade nuclear da União Soviética",
+            "Cidade fantasma desde 27 de Abril de 1986",
+            "A cidade de Slavutych foi criada para a evacuação das pessoas desta cidade",
+            "Aproximadamente 50 mil pessoas viviam aqui antes da tragédia",
+            "Cidade-sede do maior disastre nuclear do mundo até hoje"
+        ]
+    },
+    {
+        "id": 1,
+        "coordinates": {
+            "lat": 49.370829,
+            "lng": -0.8802439
+        },
+        "name": "Normandy",
+        "country": "France",
+        "description": "",
+        "tips": [
+            "Habitada desde os tempos pré-históricos",
+            "Foi parte da Inglaterra até o século 13",
+            "Foi um dos lugares mais importantes da segunda guerra mundial",
+            "Território estava em controle alemão até então",
+            "A operação foi chamada de Operação Netuno, ou Dia D"
+        ]
+    },
+    {
+        "id": 2,
+        "coordinates": {
+            "lat": 48.8534413,
+            "lng": 2.3693203
+        },
+        "name": "Bastille, Paris",
+        "country": "France",
+        "description": "",
+        "tips": [
+            "Utilizada como prisão na França medieval",
+            "Sua queda foi um evento marcante na Revolução Francesa",
+            "14 de Julho de 1789, principal feriado francês a partir de 1880",
+            "Juntamente com a Declaração dos Direitos do Homem e do Cidadão formaram o terceiro evento da fase inicial da Revolução",
+            "Hoje não existe mais a prisão original, apenas um memorial em praça pública"
+        ]
+    },
+    {
+        "id": 3,
+        "coordinates": {
+            "lat": 52.5077078,
+            "lng": 13.3903831
+        },
+        "name": "Berlin",
+        "country": "Germany",
+        "description": "",
+        "tips": [
+            "Barreira física e ideológica",
+            "Demolição ocorreu em 13 de Junho de 1990",
+            "Marcou a divisão de uma nação",
+            "Dividido em pontos de cruzamento, este era um dos mais importantes",
+            "Localizado no coração da cidade controlado pelos americanos"
+        ]
+    },
+    {
+        "id": 4,
+        "coordinates": {
+            "lat": -12.9734903,
+            "lng": -38.5120588
+        },
+        "name": "Salvador",
+        "country": "Brazil",
+        "description": "",
+        "tips": [
+            "Conhecida como a primeira capital do Brasil",
+            "Fundada em 1549",
+            "A partir de 1985 é considerada Patrimônio da Humanidade",
+            "Maior cidade do nordeste brasileiro, e 4a maior do Brasil",
+            "Quem nasce nesta cidade é chamado de Soteropolitano"
+        ]
+    },
+    {
+        "id": 5,
+        "coordinates": {
+            "lat": 19.4325922,
+            "lng": -99.1331021
+        },
+        "name": "Tenochtitlan",
+        "country": "Mexico",
+        "description": "",
+        "tips": [
+            "Capital da Civilização Mexicana",
+            "Possuía entre 200 e 400 mil habitantes no momento de sua queda, em 1521",
+            "Invadida peo conquistador espanhol Hernán Cortés",
+            "Maior cidade da América pré-Colombo",
+            "Era considerada a ociedade mais complexa da Mesoamérica em relação à estratificação social"
+        ]
+    },
+    {
+        "id": 6,
+        "coordinates": {
+            "lat": 51.4771394,
+            "lng": -0.0006176
+        },
+        "name": "Greenwich",
+        "country": "England",
+        "description": "",
+        "tips": [
+            "O horário mundial é baseado em meridiano dado a partir de seu nome",
+            "Considerado desde 1997 como patrimônio da humanidade",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "id": 7,
+        "coordinates": {
+            "lat": 41.8900672,
+            "lng": 12.4935139
+        },
+        "name": "Colosseum, Rome",
+        "country": "Italy",
+        "description": "",
+        "tips": [
+            "Também conhecido como Anfiteatro Flavio",
+            "Contruído entre os anos de 72 e 80",
+            "Tinha capacidade entre 50 e 80 mil",
+            "Está representado na versão nacional da moeda de cinco centavos de Euro",
+            "Considerada uma das 7 maravilhas do mundo"
+        ]
+    },
+    {
+        "id": 8,
+        "coordinates": {
+            "lat": 37.9713115,
+            "lng": 23.7262296
+        },
+        "name": "Parthenon, Athens",
+        "country": "Greece",
+        "description": "",
+        "tips": [
+            "Monumento dedicado à deusa Atena",
+            "Suas esculturas são consideradas o ponto alto da arte grega",
+            "Várias obras de resturação estão sendo feitas desde 1975, a última iniciada está para terminar em 2020",
+            "Seu nome vem de uma palavra que significa \"Apartamento de mulher solteira\"",
+            "Em 1687 ocorreu a maior desastre na edificação, por parte da Guerra de Morea quando os Venezianos atacaram Atenas por ordem de Francesco Morosini"
+        ]
+    },
+    {
+        "id": 9,
+        "coordinates": {
+            "lat": 38.6916574,
+            "lng": -9.2159039
+        },
+        "name": "Torre de Belém, Lisboa",
+        "country": "Portugal",
+        "description": "",
+        "tips": [
+            "Localizado no rio Tagus",
+            "Uma das principais contruções do estilo Manuelino, ou Gótico Português Tardio",
+            "ConstruçAo finalizada em 1519",
+            "Desde 1983 é considerado um patrimônio da humanidade",
+            "Também chamada de Torre de São Vicente"
+        ]
+    }
+]

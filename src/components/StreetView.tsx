@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useContext } from 'react'
-import { LatLng } from '../types'
+import { Coordinates } from '../types'
 import MapsContext from '../context/Maps'
 
 const streetViewPanoramaOptions = {
@@ -13,12 +13,11 @@ const streetViewPanoramaOptions = {
 }
 
 interface StreetViewProps {
-  containerClassName?: string
-  mapClassName?: string
-  coordinates: LatLng
+  className?: string
+  coordinates: Coordinates
 }
 
-const StreetView: React.FC<StreetViewProps> = ({ mapClassName, containerClassName, coordinates }) => {
+const StreetView: React.FC<StreetViewProps> = ({ className, coordinates }) => {
   const { google } = useContext(MapsContext)
   const ref = useRef(null)
   const [instance, setInstance] = useState()
@@ -33,20 +32,13 @@ const StreetView: React.FC<StreetViewProps> = ({ mapClassName, containerClassNam
 
   return (
     <div
-    className={containerClassName}
+      ref={ref}
+      className={className}
       style={{
         width: '100%',
         height: '100%',
       }}
-    >
-      <div
-        ref={ref}
-        className={mapClassName}
-        style={{
-          height: '100%',
-        }}
-      />
-    </div>
+    />
   )
 }
 

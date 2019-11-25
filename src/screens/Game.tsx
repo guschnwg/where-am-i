@@ -1,47 +1,53 @@
 import React, { useState, useContext, useEffect, useCallback } from 'react'
 import StreetView from '../components/StreetView'
 import Guess from '../components/Guess'
-import MapsContext from '../context/Maps'
+import { useMaps } from '../context/Maps'
 import '../styles/screens/Game.css'
+import Tips from '../components/Tips'
+import { Place } from '../types'
 
 const GameScreen: React.FC = () => {
-  const { randomStreetView } = useContext(MapsContext)
-  const [coordinates, setCoordinates] = useState()
+  const { getPlace } = useMaps()
+  const [place, setPlace] = useState<Place>()
 
-  const tryRandomPlace = useCallback(() => {
-    randomStreetView().then(setCoordinates).catch(tryRandomPlace)
-  }, [randomStreetView])
+  const tryGetPlace = useCallback(() => {
+    const place = getPlace()
+    if (place) {
+      setPlace(place)
+    }
+  }, [getPlace])
 
   useEffect(() => {
-    tryRandomPlace()
-  }, [tryRandomPlace])
+    tryGetPlace()
+  }, [tryGetPlace])
+
+  if (!place) {
+    return (
+      <span>
+        Loading...
+      </span>
+    )
+  }
 
   return (
     <div
       className="container"
     >
-      <h1
-        className="title"
-      >
-        Where Am I?
-      </h1>
+      <StreetView
+        className="street-view-container"
+        coordinates={place.coordinates}
+      />
 
-      <div
-        className="game-container"
-      >
-        <StreetView
-          containerClassName="street-view-container"
-          mapClassName="street-view-map"
-          coordinates={coordinates}
-        />
+      <Guess
+        className="guess-container"
+        coordinates={place.coordinates}
+        onGuessed={tryGetPlace}
+      />
 
-        <Guess
-          containerClassName="guess-container"
-          mapClassName="guess-map"
-          point={coordinates}
-          onGuessed={tryRandomPlace}
-        />
-      </div>
+      <Tips
+        className="tips-container"
+        tips={place.tips}
+      />
     </div>
   )
 }

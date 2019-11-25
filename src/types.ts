@@ -29,3 +29,17 @@ export interface Point {
   icon: string
   position: LatLng
 }
+
+export interface Coordinates {
+  lat: number
+  lng: number
+}
+
+export interface Place {
+  id: number
+  name: string
+  country: string
+  description: string
+  coordinates: Coordinates
+  tips: string[]
+}

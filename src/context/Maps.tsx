@@ -2,7 +2,8 @@ import React, { useContext } from 'react'
 import { Random, browserCrypto } from 'random-js'
 // @ts-ignore
 import makeAsyncScriptLoader from 'react-async-script'
-import { Google, LatLng } from '../types'
+import PLACES from '../data/places.json'
+import { Google, LatLng, Place } from '../types'
 
 const random = new Random(browserCrypto)
 
@@ -16,6 +17,7 @@ interface MapsContextProps {
 interface MapsContextState {
   google: Google
   randomStreetView: () => Promise<LatLng>
+  getPlace: () => Place
 }
 
 // @ts-ignore
@@ -52,11 +54,16 @@ const MapsContextProvider = makeAsyncScriptLoader(URL, {
     })
   }
 
+  const getPlace = () => {
+    return PLACES.pop()
+  }
+
   return (
     <MapsContext.Provider
       value={{
         google,
         randomStreetView,
+        getPlace,
       }}
     >
       {children}
@@ -64,7 +71,7 @@ const MapsContextProvider = makeAsyncScriptLoader(URL, {
   )
 }) as React.FC<MapsContextProps>)
 
-const useMaps = () => useContext(MapsContext)
+const useMaps: () => MapsContextState = () => useContext(MapsContext)
 
 export {
   MapsContextProvider,

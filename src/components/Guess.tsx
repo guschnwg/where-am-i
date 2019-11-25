@@ -1,16 +1,16 @@
 import React, { useEffect, useRef, useState, useContext } from  'react'
-import { Point } from '../types'
+import { Resizable } from 're-resizable'
+import { Coordinates } from '../types'
 import MapsContext from '../context/Maps'
 import '../styles/components/Guess.css'
 
 interface GuessProps {
-  mapClassName: string
-  containerClassName: string
-  point: Point
+  className?: string
+  coordinates: Coordinates
   onGuessed: () => void
 }
 
-const Guess: React.FC<GuessProps> = ({ mapClassName, containerClassName, point, onGuessed }) => {
+const Guess: React.FC<GuessProps> = ({ className, coordinates, onGuessed }) => {
   const { google } = useContext(MapsContext)
 
   const ref = useRef(null)
@@ -41,7 +41,7 @@ const Guess: React.FC<GuessProps> = ({ mapClassName, containerClassName, point, 
     if (!map) {
       const center = new google.maps.LatLng(0, 0)
       const mapOptions = {
-        zoom: 3,
+        zoom: 2,
         minZoom: 2,
         center,
         streetViewControl: false,
@@ -53,8 +53,27 @@ const Guess: React.FC<GuessProps> = ({ mapClassName, containerClassName, point, 
       }
       const map = new google.maps.Map(ref.current, mapOptions)
 
+      var styles = [
+        {
+          featureType: 'all',
+          elementType: 'labels',
+          stylers: [
+            {
+              visibility: 'off',
+            },
+          ],
+        },
+      ];
+
+      map.setOptions({
+        styles: styles,
+      });
+
       map.addListener('click', (data: any) => {
-        setGuess(data.latLng)
+        setGuess({
+          lat: data.latLng.lat(),
+          lng: data.latLng.lng()
+        })
       })
 
       setMap(map)
@@ -73,15 +92,18 @@ const Guess: React.FC<GuessProps> = ({ mapClassName, containerClassName, point, 
     const line = new google.maps.Polyline({
       path: [
         guess,
-        point,
+        coordinates,
       ],
     })
     line.setMap(map)
 
-    const distance = google.maps.geometry.spherical.computeDistanceBetween(guess, point)
+    const distance = google.maps.geometry.spherical.computeDistanceBetween(
+      new google.maps.LatLng(guess),
+      new google.maps.LatLng(coordinates)
+    )
 
     const correctMarker = new google.maps.Marker({
-      position: point,
+      position: coordinates,
       label: `Distance: ${(distance / 1000).toFixed(2)}km`,
       icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
     })
@@ -98,40 +120,44 @@ const Guess: React.FC<GuessProps> = ({ mapClassName, containerClassName, point, 
   }
 
   return (
-    <div
-      className={containerClassName}
-      style={{
-        position: 'relative',
-        height: '100%',
-        width: '100%',
+    <Resizable
+      className={className}
+      defaultSize={{
+        width: 320,
+        height: '50%',
       }}
+      enable={{
+        left: true,
+      }}
+      minWidth={200}
+      maxWidth="33vw"
     >
       <div
         ref={ref}
-        className={mapClassName}
         style={{
+          position: 'relative',
           height: '100%',
           width: '100%',
         }}
-      />
-
-      {
-        guess && (
-          <button
-            className="guess-confirm"
-            style={{
-              position: 'absolute',
-              bottom: '10px',
-              left: '10px',
-              width: 'calc(100% - 20px)',
-            }}
-            onClick={handleConfirmGuess}
+      >
+        {
+          guess && (
+            <button
+              className="guess-confirm"
+              style={{
+                position: 'absolute',
+                bottom: '10px',
+                left: '10px',
+                width: 'calc(100% - 20px)',
+              }}
+              onClick={handleConfirmGuess}
             >
-            GUESS
-          </button>
-        )
-      }
-    </div>
+              GUESS
+            </button>
+          )
+        }
+      </div>
+    </Resizable>
   )
 }
 
