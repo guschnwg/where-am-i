@@ -14,6 +14,9 @@
     border-top-left-radius: 20px;
     border: 5px solid burlywood;
     border-bottom: none;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .tips-container > h2 {

@@ -123,14 +123,17 @@ const Guess: React.FC<GuessProps> = ({ coordinates, onGuessed }) => {
       className="guess-container"
       defaultSize={{
         width: 320,
-        height: '50%',
+        height: 320,
       }}
       enable={{
         right: true,
         bottom: true,
+        bottomRight: true,
       }}
       minWidth={200}
       maxWidth="33vw"
+      minHeight={200}
+      maxHeight="33vw"
     >
       <div
         ref={ref}

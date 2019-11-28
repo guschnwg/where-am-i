@@ -1,9 +1,9 @@
-import React, { useState, useCallback, useEffect } from  'react'
+import React, { useState, useEffect } from  'react'
 import '../styles/components/Tips.css'
 import { Resizable } from 're-resizable'
 import Clock from './Clock'
 
-const TIPS_TIME = [1, 15, 30, 45, 60, 75]
+const TIPS_TIME = [10, 20, 30, 40, 50]
 
 interface TipsProps {
   tips?: string[]
@@ -11,14 +11,33 @@ interface TipsProps {
 
 const Tips: React.FC<TipsProps> = ({ tips }) => {
   const [tipsShown, setTipsShown] = useState(0)
-
-  const handleCompleted = useCallback(() => {
-    setTipsShown(current => current + 1)
-  }, [])
+  const [time, setTime] = useState(TIPS_TIME[0])
+  const [, setCounterTimeout] = useState()
 
   useEffect(() => {
     setTipsShown(0)
+    setTime(TIPS_TIME[0])
+    setCounterTimeout((current: number) => {
+      clearTimeout(current)
+      return null
+    })
   }, [tips])
+
+  useEffect(() => {
+    if (time > 0) {
+      setCounterTimeout(
+        setTimeout(() => {
+          setTime(time - 1)
+        }, 1000)
+      )
+    } else {
+      setTipsShown(current => current + 1)
+    }
+  }, [time])
+
+  useEffect(() => {
+    setTime(TIPS_TIME[tipsShown])
+  }, [tipsShown])
 
   return (
     <Resizable
@@ -38,8 +57,7 @@ const Tips: React.FC<TipsProps> = ({ tips }) => {
 
         {tipsShown <= 5 && (
           <Clock
-            time={TIPS_TIME[tipsShown]}
-            onCompleted={handleCompleted}
+            time={time}
           />
         )}
       </h2>
