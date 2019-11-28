@@ -1,4 +1,12 @@
-.guess-confirm {
+.guess-container {
+    position: absolute !important;
+    top: -5px;
+    left: -5px;
+    height: 50% !important;
+    z-index: 1;
+}
+
+.guess-container .guess-confirm {
     font-family: 'Irish Grover', cursive;
     background: #c19a6b;
     color: white;
@@ -7,4 +15,12 @@
     border-radius: 10px;
     border: 2px solid burlywood;
     cursor: pointer;
+}
+
+.guess-container > div {
+    height: 100%;
+    border-bottom-right-radius: 20px;
+    border: 5px solid burlywood;
+    border-left: none;
+    border-top: none;
 }

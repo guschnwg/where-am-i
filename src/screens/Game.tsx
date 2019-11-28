@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import StreetView from '../components/StreetView'
 import Guess from '../components/Guess'
 import { useMaps } from '../context/Maps'
@@ -34,18 +34,15 @@ const GameScreen: React.FC = () => {
       className="container"
     >
       <StreetView
-        className="street-view-container"
         coordinates={place.coordinates}
       />
 
       <Guess
-        className="guess-container"
         coordinates={place.coordinates}
         onGuessed={tryGetPlace}
       />
 
       <Tips
-        className="tips-container"
         tips={place.tips}
       />
     </div>

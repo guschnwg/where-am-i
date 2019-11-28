@@ -1,40 +1,65 @@
-import React from  'react'
+import React, { useState, useCallback, useEffect } from  'react'
 import '../styles/components/Tips.css'
 import { Resizable } from 're-resizable'
+import Clock from './Clock'
+
+const TIPS_TIME = [1, 15, 30, 45, 60, 75]
 
 interface TipsProps {
   tips?: string[]
-  className?: string
 }
 
-const Tips: React.FC<TipsProps> = ({ className, tips }) => {
+const Tips: React.FC<TipsProps> = ({ tips }) => {
+  const [tipsShown, setTipsShown] = useState(0)
+
+  const handleCompleted = useCallback(() => {
+    setTipsShown(current => current + 1)
+  }, [])
+
+  useEffect(() => {
+    setTipsShown(0)
+  }, [tips])
+
   return (
     <Resizable
-      className={`tips ${className}`}
+      className="tips-container"
       defaultSize={{
-        width: 320,
-        height: 'initial',
+        height: 80,
+        width: 'initial',
       }}
       enable={{
-        right: true,
+        top: true,
       }}
-      minWidth="20vw"
-      maxWidth="33vw"
+      minHeight={80}
+      maxHeight="50%"
     >
-      <h2>Tips</h2>
+      <h2>
+        Tips
+
+        {tipsShown <= 5 && (
+          <Clock
+            time={TIPS_TIME[tipsShown]}
+            onCompleted={handleCompleted}
+          />
+        )}
+      </h2>
 
       {tips && (
-        <ol>
-          {
-            tips.map((tip, index) => (
-              <li
-                key={index}
-              >
-                {tip}
-              </li>
-            ))
-          }
-        </ol>
+        <div
+          className="list-container"
+        >
+          <ol>
+            {
+              tips.slice(0, tipsShown).map((tip, index) => (
+                <li
+                  key={index}
+                >
+                  {tip}
+                </li>
+              ))
+            }
+          </ol>
+        </div>
       )}
     </Resizable>
   )

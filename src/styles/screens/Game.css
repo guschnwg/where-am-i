@@ -7,36 +7,3 @@
 
     border: 5px solid burlywood;
 }
-
-.street-view-container {
-}
-
-.guess-container {
-    position: absolute !important;
-    top: 25%;
-    right: -5px;
-    height: 50% !important;
-    z-index: 1;
-}
-
-.guess-container > div {
-    height: 100%;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border: 5px solid burlywood;
-    border-right: none;
-}
-
-.tips-container {
-    position: absolute !important;
-    left: -5px;
-    top: 5%;
-    width: 20%;
-    height: 90%;
-    z-index: 1;
-
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border: 5px solid burlywood;
-    border-left: none;
-}

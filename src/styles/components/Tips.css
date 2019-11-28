@@ -1,25 +1,46 @@
-.tips {
+.tips-container {
     background: url(../../assets/background.jpg);
+    overflow: hidden;
+    position: absolute !important;
+    left: 10%;
+    bottom: -5px;
+    width: 80%;
+    height: 10%;
+    z-index: 1;
+
+    padding: 18px;
+
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border: 5px solid burlywood;
+    border-bottom: none;
+}
+
+.tips-container > h2 {
+    color: white;
+    font-family: 'Irish Grover', cursive;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.tips-container > .list-container {
+    height: 100%;
+    max-height: 100%;
     overflow: auto;
 }
 
-.tips > h2 {
-    color: white;
-    font-family: 'Irish Grover', cursive;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 0;
-}
-
-.tips > ol {
+.tips-container > .list-container > ol {
     margin: 0;
-    padding-block-start: 20px;
+    padding-block-start: 0;
     padding-block-end: 20px;
     padding-right: 10px;
 }
 
-.tips > ol > li {
+.tips-container > .list-container > ol > li {
     color: white;
     font-family: 'Irish Grover', cursive;
     font-size: 24px;

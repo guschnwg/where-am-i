@@ -5,12 +5,11 @@ import MapsContext from '../context/Maps'
 import '../styles/components/Guess.css'
 
 interface GuessProps {
-  className?: string
   coordinates: Coordinates
   onGuessed: () => void
 }
 
-const Guess: React.FC<GuessProps> = ({ className, coordinates, onGuessed }) => {
+const Guess: React.FC<GuessProps> = ({ coordinates, onGuessed }) => {
   const { google } = useContext(MapsContext)
 
   const ref = useRef(null)
@@ -53,21 +52,21 @@ const Guess: React.FC<GuessProps> = ({ className, coordinates, onGuessed }) => {
       }
       const map = new google.maps.Map(ref.current, mapOptions)
 
-      var styles = [
-        {
-          featureType: 'all',
-          elementType: 'labels',
-          stylers: [
-            {
-              visibility: 'off',
-            },
-          ],
-        },
-      ];
+      // var styles = [
+      //   {
+      //     featureType: 'all',
+      //     elementType: 'labels',
+      //     stylers: [
+      //       {
+      //         visibility: 'off',
+      //       },
+      //     ],
+      //   },
+      // ]
 
-      map.setOptions({
-        styles: styles,
-      });
+      // map.setOptions({
+      //   styles: styles,
+      // })
 
       map.addListener('click', (data: any) => {
         setGuess({
@@ -121,13 +120,14 @@ const Guess: React.FC<GuessProps> = ({ className, coordinates, onGuessed }) => {
 
   return (
     <Resizable
-      className={className}
+      className="guess-container"
       defaultSize={{
         width: 320,
         height: '50%',
       }}
       enable={{
-        left: true,
+        right: true,
+        bottom: true,
       }}
       minWidth={200}
       maxWidth="33vw"
