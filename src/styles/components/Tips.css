@@ -5,10 +5,13 @@
     left: 10%;
     bottom: -5px;
     width: 80%;
-    height: 10%;
+    height: calc(70vh);
+    transform: translateY(100%);
+    transition: transform .5s;
     z-index: 1;
 
-    padding: 18px;
+    padding: 10px;
+    box-sizing: border-box;
 
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
@@ -17,6 +20,11 @@
 
     display: flex;
     flex-direction: column;
+}
+
+.tips-container.tips-enabled {
+    transform: translateY(0);
+    transition: transform .5s;
 }
 
 .tips-container > h2 {

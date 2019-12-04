@@ -10,7 +10,6 @@
     "@types/react-dom": "16.9.2",
     "gh-pages": "^2.1.1",
     "random-js": "^2.1.0",
-    "re-resizable": "^6.1.0",
     "react": "^16.10.2",
     "react-async-script": "^1.1.1",
     "react-dom": "^16.10.2",

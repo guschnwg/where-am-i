@@ -1,0 +1,77 @@
+.details-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: url(../../assets/background.jpg);
+    color: white;
+}
+
+.details-container .info-container {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+}
+
+.details-container .info-container .description-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
+
+.details-container .info-container .description-container h2 {
+    font-family: 'Irish Grover', cursive;
+    color: white;
+    text-align: center;
+    font-size: 48px;
+    margin: 10px;
+}
+
+.details-container .info-container .description-container h3 {
+    font-family: 'Irish Grover', cursive;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    margin: 10px;
+}
+
+.details-container .info-container .description-container h4 {
+    font-family: 'Irish Grover', cursive;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    margin: 10px;
+}
+
+.details-container .info-container .description-container img {
+    height: 48px; 
+    width: 48px;
+    margin-left: 10px;
+}
+
+.details-container .info-container .description-container button {
+    font-family: 'Irish Grover', cursive;
+    background: burlywood;
+    color: white;
+    margin-top: 20px;
+    font-size: 24px;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 5px solid white;
+    cursor: pointer;
+}
+
+.details-container .info-container .map-container {
+    width: 250px;
+    height: 250px;
+}
+
+.details-container .wikipedia-container {
+    height: 100%;
+    width: 100%;
+}

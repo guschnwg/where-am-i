@@ -1,22 +1,22 @@
 import React, { useEffect, useRef, useState, useContext } from  'react'
-import { Resizable } from 're-resizable'
 import { Coordinates } from '../types'
 import MapsContext from '../context/Maps'
 import '../styles/components/Guess.css'
 
 interface GuessProps {
+  enabled: boolean
   coordinates: Coordinates
-  onGuessed: () => void
+  onGuess: (guess: Coordinates) => void
 }
 
-const Guess: React.FC<GuessProps> = ({ coordinates, onGuessed }) => {
+const Guess: React.FC<GuessProps> = ({ enabled, coordinates, onGuess }) => {
   const { google } = useContext(MapsContext)
 
   const ref = useRef(null)
   const [map, setMap] = useState()
 
   const [guess, setGuess] = useState()
-  const [marker, setMarker] = useState()
+  const [, setMarker] = useState()
 
   useEffect(() => {
     if (guess) {
@@ -37,103 +37,36 @@ const Guess: React.FC<GuessProps> = ({ coordinates, onGuessed }) => {
   }, [google.maps.Marker, guess, map])
 
   useEffect(() => {
-    if (!map) {
-      const center = new google.maps.LatLng(0, 0)
-      const mapOptions = {
-        zoom: 2,
-        minZoom: 2,
-        center,
-        streetViewControl: false,
-        fullscreenControl: false,
-        mapTypeControl: false,
-        zoomControlOptions: {
-          position: google.maps.ControlPosition.TOP_RIGHT,
-        },
-      }
-      const map = new google.maps.Map(ref.current, mapOptions)
-
-      // var styles = [
-      //   {
-      //     featureType: 'all',
-      //     elementType: 'labels',
-      //     stylers: [
-      //       {
-      //         visibility: 'off',
-      //       },
-      //     ],
-      //   },
-      // ]
-
-      // map.setOptions({
-      //   styles: styles,
-      // })
-
-      map.addListener('click', (data: any) => {
-        setGuess({
-          lat: data.latLng.lat(),
-          lng: data.latLng.lng()
-        })
-      })
-
-      setMap(map)
+    const mapOptions = {
+      zoom: 2,
+      minZoom: 2,
+      center: new google.maps.LatLng(0, 0),
+      streetViewControl: false,
+      fullscreenControl: false,
+      mapTypeControl: false,
+      zoomControlOptions: {
+        position: google.maps.ControlPosition.TOP_RIGHT,
+      },
     }
+    const map = new google.maps.Map(ref.current, mapOptions)
+
+    map.addListener('click', (data: any) => {
+      setGuess({
+        lat: data.latLng.lat(),
+        lng: data.latLng.lng()
+      })
+    })
+
+    setMap(map)
   }, [
     google.maps.Map,
     google.maps.LatLng,
-    google.maps.Marker,
     google.maps.ControlPosition.TOP_RIGHT,
-    map,
   ])
 
-  const handleConfirmGuess = () => {
-    marker.setMap(null)
-
-    const line = new google.maps.Polyline({
-      path: [
-        guess,
-        coordinates,
-      ],
-    })
-    line.setMap(map)
-
-    const distance = google.maps.geometry.spherical.computeDistanceBetween(
-      new google.maps.LatLng(guess),
-      new google.maps.LatLng(coordinates)
-    )
-
-    const correctMarker = new google.maps.Marker({
-      position: coordinates,
-      label: `Distance: ${(distance / 1000).toFixed(2)}km`,
-      icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-    })
-    correctMarker.setMap(map)
-
-    const guessMarker = new google.maps.Marker({
-      position: guess,
-      label: 'You guessed',
-      icon: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
-    })
-    guessMarker.setMap(map)
-
-    onGuessed()
-  }
-
   return (
-    <Resizable
-      className="guess-container"
-      defaultSize={{
-        width: 320,
-        height: 320,
-      }}
-      enable={{
-        right: true,
-        bottom: true,
-        bottomRight: true,
-      }}
-      minWidth={200}
-      maxWidth="33vw"
-      minHeight={200}
-      maxHeight="33vw"
+    <div
+      className={`guess-container${enabled ? ' guess-enabled' : ''}`}
     >
       <div
         ref={ref}
@@ -153,14 +86,14 @@ const Guess: React.FC<GuessProps> = ({ coordinates, onGuessed }) => {
                 left: '10px',
                 width: 'calc(100% - 20px)',
               }}
-              onClick={handleConfirmGuess}
+              onClick={() => onGuess(guess)}
             >
               GUESS
             </button>
           )
         }
       </div>
-    </Resizable>
+    </div>
   )
 }
 

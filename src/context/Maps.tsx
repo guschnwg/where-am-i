@@ -8,7 +8,7 @@ import { Google, LatLng, Place } from '../types'
 const random = new Random(browserCrypto)
 
 const API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY
-const URL = 'https://maps.googleapis.com/maps/api/js?key=' + API_KEY
+const URL = 'https://maps.googleapis.com/maps/api/js?key=' + API_KEY + '&libraries=geometry'
 
 interface MapsContextProps {
   google: Google
@@ -17,7 +17,7 @@ interface MapsContextProps {
 interface MapsContextState {
   google: Google
   randomStreetView: () => Promise<LatLng>
-  getPlace: () => Place
+  getPlace: (difficulty?: number) => Place
 }
 
 // @ts-ignore
@@ -54,7 +54,10 @@ const MapsContextProvider = makeAsyncScriptLoader(URL, {
     })
   }
 
-  const getPlace = () => {
+  const getPlace = (difficulty?: number) => {
+    if (difficulty) {
+      return PLACES.filter(place => place.difficulty === difficulty).pop()
+    }
     return PLACES.pop()
   }
 

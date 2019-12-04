@@ -39,7 +39,28 @@ export interface Place {
   id: number
   name: string
   country: string
+  countryCode: string
   description: string
+  wikipedia: string
+  difficulty: Difficulty
   coordinates: Coordinates
   tips: string[]
+}
+
+export interface GameGuess {
+  place: Place
+  coordinates: Coordinates
+  time: MinSec
+  distance: number
+}
+
+export interface MinSec {
+  minutes: number
+  seconds: number
+}
+
+export enum Difficulty {
+  'Fácil' = 1,
+  'Médio' = 2,
+  'Difícil' = 3,
 }
