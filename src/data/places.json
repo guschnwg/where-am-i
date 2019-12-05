@@ -10,7 +10,7 @@
         "country": "Ukraine",
         "countryCode": "UA",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Pripyat",
+        "wikipedia": "https://pt.wikipedia.org/wiki/Pripyat",
         "tips": [
             "Nona cidade nuclear da União Soviética",
             "Cidade fantasma desde 27 de Abril de 1986",
@@ -30,7 +30,7 @@
         "country": "France",
         "countryCode": "FR",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Normandy",
+        "wikipedia": "https://pt.wikipedia.org/wiki/Normandia",
         "tips": [
             "Habitada desde os tempos pré-históricos",
             "Foi parte da Inglaterra até o século 13",
@@ -50,7 +50,7 @@
         "country": "France",
         "countryCode": "FR",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Bastille",
+        "wikipedia": "https://pt.wikipedia.org/wiki/Bastilha",
         "tips": [
             "Utilizada como prisão na França medieval",
             "Sua queda foi um evento marcante na Revolução Francesa",
@@ -70,7 +70,7 @@
         "country": "Germany",
         "countryCode": "DE",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Berlin_Wall",
+        "wikipedia": "https://pt.wikipedia.org/wiki/Muro_de_Berlim",
         "tips": [
             "Barreira física e ideológica",
             "Demolição ocorreu em 13 de Junho de 1990",
@@ -90,7 +90,7 @@
         "country": "Brazil",
         "countryCode": "BR",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Salvador,_Bahia",
+        "wikipedia": "https://pt.wikipedia.org/wiki/Salvador",
         "tips": [
             "Conhecida como a primeira capital do Brasil",
             "Quem nasce nesta cidade é chamado de Soteropolitano",
@@ -110,7 +110,7 @@
         "country": "Mexico",
         "countryCode": "MX",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Tenochtitlan",
+        "wikipedia": "https://pt.wikipedia.org/wiki/Tenochtitl%C3%A1n",
         "tips": [
             "Capital da Civilização Mexicana",
             "Possuía entre 200 e 400 mil habitantes no momento de sua queda, em 1521",
@@ -130,12 +130,12 @@
         "country": "England",
         "countryCode": "GB",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Greenwich",
+        "wikipedia": "https://pt.wikipedia.org/wiki/Greenwich",
         "tips": [
-            "O horário mundial é baseado em meridiano dado a partir de seu nome",
             "Considerado desde 1997 como patrimônio da humanidade",
             "Notável por sua história marítima",
             "Lugar de nascimento de três monarcas da Inglaterra: Henrique VIII, Maria I e Isabel I",
+            "O horário mundial é baseado em meridiano dado a partir de seu nome",
             "Bairro da capital da Inglaterra"
         ]
     },
@@ -150,7 +150,7 @@
         "country": "Italy",
         "countryCode": "IT",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Colosseum",
+        "wikipedia": "https://pt.wikipedia.org/wiki/Coliseu",
         "tips": [
             "Também conhecido como Anfiteatro Flavio",
             "Construído entre os anos de 72 e 80",
@@ -170,7 +170,7 @@
         "country": "Greece",
         "countryCode": "GR",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Parthenon",
+        "wikipedia": "https://pt.wikipedia.org/wiki/Partenon",
         "tips": [
             "Monumento dedicado à deusa Atena",
             "Suas esculturas são consideradas o ponto alto da arte grega",
@@ -190,7 +190,7 @@
         "country": "Portugal",
         "countryCode": "PT",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Bel%C3%A9m_Tower",
+        "wikipedia": "https://pt.wikipedia.org/wiki/Torre_de_Bel%C3%A9m",
         "tips": [
             "Localizado no rio Tagus",
             "Uma das principais construções do estilo Manuelino, ou Gótico Português Tardio",
@@ -210,7 +210,7 @@
         "country": "Spain",
         "countryCode": "ES",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Alhambra",
+        "wikipedia": "https://pt.wikipedia.org/wiki/Alhambra",
         "tips": [
             "Trata-se de um rico complexo palaciano e fortaleza (alcazar ou al-Ksar) que alojava o monarca da dinastia nacérida e a corte do Reino de Granada",
             "classificado como Património da Humanidade pela UNESCO em 1984",
@@ -230,7 +230,7 @@
         "country": "Turkey",
         "countryCode": "TR",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Constantinople",
+        "wikipedia": "https://pt.wikipedia.org/wiki/Constantinopla",
         "tips": [
             "foi a capital do Império Romano (330–395), do Império Bizantino (ou Império Romano do Oriente) (395–1204 e 1261–1453), do Império Latino (1204–1261) e, após a tomada pelos turcos, do Império Otomano (1453–1922)",
             "No decorrer da Idade Média, foi a maior e mais rica cidade da Europa",
@@ -250,7 +250,7 @@
         "country": "Lebanon",
         "countryCode": "LB",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Byblos",
+        "wikipedia": "https://pt.wikipedia.org/wiki/Biblos",
         "tips": [
             "Cidade portuária da antiga Civilização Fenícia",
             "É daqui que surge o nome da Bíblia",
@@ -270,7 +270,7 @@
         "country": "Peru",
         "countryCode": "PE",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Machu_Picchu",
+        "wikipedia": "https://pt.wikipedia.org/wiki/Machu_Picchu",
         "tips": [
             "Conhecida como cidade perdida dos Incas",
             "Está situada no alto de uma montanha",
@@ -290,7 +290,7 @@
         "country": "China",
         "countryCode": "CN",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Beijing",
+        "wikipedia": "https://pt.wikipedia.org/wiki/Pequim",
         "tips": [
             "A história da cidade remonta a mais de três milênios",
 		    "Famosa por seus opulentos palácios, templos, parques, jardins, túmulos, muralhas, portões, e por seus tesouros artísticos e universidades, que a tornaram um centro cultural do país",
@@ -310,7 +310,7 @@
         "country": "Australia",
         "countryCode": "AU",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Sydney",
+        "wikipedia": "https://pt.wikipedia.org/wiki/Sydney",
         "tips": [
             "Localizado no país de maior pib per capita do hemisfério sul",
             "Seu país é conhecido pela fauna exótica e animais como o Canguru marcam a sua identidade",
@@ -330,7 +330,7 @@
         "country": "South Africa",
         "countryCode": "ZA",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Cape_of_Good_Hope",
+        "wikipedia": "https://pt.wikipedia.org/wiki/Cabo_da_Boa_Esperan%C3%A7a",
         "tips": [
             "Foi descoberto pela primeira vez em 1488 pelo navegador português Bartolomeu Dias",
             "Chamado primeiramente de cabo das Tormentas, o rei João II de Portugal mudou seu nome que simbolizaria a tão desejada chegada à Índia",
@@ -350,7 +350,7 @@
         "country": "Italy",
         "countryCode": "IT",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa",
+        "wikipedia": "https://pt.wikipedia.org/wiki/Torre_de_Pisa",
         "tips": [
             "Embora destinada a ficar na vertical, a torre começou a inclinar-se para sudeste",
             "A construção do primeiro andar começou no dia 9 de agosto de 1173",
@@ -370,7 +370,7 @@
         "country": "Japan",
         "countryCode": "JP",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Hiroshima_Peace_Memorial",
+        "wikipedia": "https://pt.wikipedia.org/wiki/Memorial_da_Paz_de_Hiroshima",
         "tips": [
             "Monumento chamado de Cúpula Genbaku ou Cúpula da Bomba Atômica",
             "O edifício foi originalmente projetado pelo arquiteto tcheco Jan Letzel",

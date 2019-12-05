@@ -1,0 +1,25 @@
+.time-elapsed-container {
+    position: fixed;
+    background: url(../../assets/background.jpg);
+    background-size: cover;
+    overflow: hidden;
+    top: -5px;
+    left: -5px;
+    width: 120px;
+    height: 70px;
+
+    z-index: 10;
+
+    border-bottom-right-radius: 20px;
+    border: 5px solid burlywood;
+    border-top: none;
+    border-left: none;
+
+    color: white;
+    font-family: 'Irish Grover', cursive;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 42px;
+}

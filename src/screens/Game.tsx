@@ -3,6 +3,7 @@ import StreetView from '../components/StreetView'
 import Guess from '../components/Guess'
 import Details from '../components/Details'
 import Results from '../components/Results'
+import TimeElapsed from '../components/TimeElapsed'
 import Name from '../components/Name'
 import { useMaps } from '../context/Maps'
 import '../styles/screens/Game.css'
@@ -148,6 +149,8 @@ const GameScreen: React.FC = () => {
         enabled={board === 'Tips'}
         tips={place.tips}
       />
+
+      <TimeElapsed />
     </div>
   )
 }
