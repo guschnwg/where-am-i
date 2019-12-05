@@ -91,35 +91,23 @@ const Results: React.FC<ResultsProps> = ({ name, history }) => {
   const distance = history.reduce<number>((agg, crr) => agg + crr.distance, 0)
 
   const handleFeedback = () => {
-    // fetch('https://firestore.googleapis.com/v1/projects/acessibilidade-5150f/databases/(default)/documents/feedbacks', {
-    //   method: 'POST',
-    //   body: JSON.stringify({
-    //     fields: {
-    //       name,
-    //       history,
-    //       minSec,
-    //       distance,
-    //       feedback,
-    //     },
-    //   })
-    // }).then(console.log).catch(console.error)
     Axios.post('https://firestore.googleapis.com/v1/projects/acessibilidade-5150f/databases/(default)/documents/feedbacks', { 
       fields: { 
-          name: {
-            stringValue: name,
-          }, 
-          history: {
-            stringValue: JSON.stringify(history),
-          },
-          minSec: {
-            stringValue: JSON.stringify(minSec),
-          }, 
-          distance: {
-            doubleValue: distance,
-          },
-          feedback: {
-            stringValue: feedback,
-          },
+        name: {
+          stringValue: name,
+        }, 
+        history: {
+          stringValue: JSON.stringify(history),
+        },
+        minSec: {
+          stringValue: JSON.stringify(minSec),
+        }, 
+        distance: {
+          doubleValue: distance,
+        },
+        feedback: {
+          stringValue: feedback,
+        },
       },
     }).then(() => {
       window.location.reload()

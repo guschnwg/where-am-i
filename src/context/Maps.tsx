@@ -56,7 +56,7 @@ const MapsContextProvider = makeAsyncScriptLoader(URL, {
 
   const getPlace = (difficulty?: number) => {
     const places = difficulty ? PLACES.filter(place => place.difficulty === difficulty) : PLACES
-    const index = Math.round(Math.random() * places.length)
+    const index = random.integer(0, places.length - 1)
 
     return places[index]
   }
