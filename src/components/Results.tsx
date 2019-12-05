@@ -5,6 +5,7 @@ import '../styles/components/Results.css'
 import milliToMinSec from '../utils/milliToMinSec'
 import Flag from './Flag'
 import { useMaps } from '../context/Maps'
+import firestoreMap from '../utils/firestoreMap'
 
 interface GuessResult {
   guess: GameGuess
@@ -91,24 +92,16 @@ const Results: React.FC<ResultsProps> = ({ name, history }) => {
   const distance = history.reduce<number>((agg, crr) => agg + crr.distance, 0)
 
   const handleFeedback = () => {
+    const data = {
+      name,
+      history,
+      minSec,
+      distance,
+      feedback,
+    }
+
     Axios.post('https://firestore.googleapis.com/v1/projects/acessibilidade-5150f/databases/(default)/documents/feedbacks', { 
-      fields: { 
-        name: {
-          stringValue: name,
-        }, 
-        history: {
-          stringValue: JSON.stringify(history),
-        },
-        minSec: {
-          stringValue: JSON.stringify(minSec),
-        }, 
-        distance: {
-          doubleValue: distance,
-        },
-        feedback: {
-          stringValue: feedback,
-        },
-      },
+      fields: firestoreMap(data),
     }).then(() => {
       window.location.reload()
     }).catch(console.error)
