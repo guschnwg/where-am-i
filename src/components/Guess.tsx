@@ -27,6 +27,9 @@ const Guess: React.FC<GuessProps> = ({ enabled, coordinates, onGuess }) => {
 
         const newMarker = new google.maps.Marker({
           position: guess,
+          icon: {
+            url: 'http://maps.google.com/mapfiles/ms/icons/red-pushpin.png',
+          },
         })
   
         newMarker.setMap(map)
@@ -88,7 +91,7 @@ const Guess: React.FC<GuessProps> = ({ enabled, coordinates, onGuess }) => {
               }}
               onClick={() => onGuess(guess)}
             >
-              GUESS
+              Confirmar palpite
             </button>
           )
         }

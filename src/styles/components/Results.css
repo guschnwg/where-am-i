@@ -1,0 +1,67 @@
+.results-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: url(../../assets/background.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.results-container h2 {
+    font-family: 'Irish Grover', cursive;
+    color: white;
+    text-align: center;
+    font-size: 48px;
+    margin: 10px;
+}
+
+.results-container > p {
+    font-family: 'Irish Grover', cursive;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    margin: 10px;
+}
+
+.results-container .places-container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.results-container .places-container .place-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.results-container .places-container .place-container h3 {
+    font-family: 'Irish Grover', cursive;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    margin: 10px;
+}
+
+.results-container .places-container .place-container img {
+    margin-bottom: 10px;
+}
+
+.results-container .places-container .place-container p {
+    font-family: 'Irish Grover', cursive;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    margin: 10px;
+}
+
+.results-container .places-container .place-container .map-container {
+    width: 250px;
+    height: 250px;
+    margin-top: 25px;
+}

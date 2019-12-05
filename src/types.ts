@@ -50,7 +50,8 @@ export interface Place {
 export interface GameGuess {
   place: Place
   coordinates: Coordinates
-  time: MinSec
+  minSec: MinSec
+  time: number
   distance: number
 }
 

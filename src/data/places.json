@@ -1,36 +1,36 @@
 [
     {
         "id": 0,
+        "difficulty": 2,
         "coordinates": {
             "lat": 51.4041827,
             "lng": 30.0429179
         },
         "name": "Pripyat",
         "country": "Ukraine",
-        "countryCode": "uk",
+        "countryCode": "UA",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Bel%C3%A9m_Tower",
-        "difficulty": 1,
+        "wikipedia": "https://en.wikipedia.org/wiki/Pripyat",
         "tips": [
             "Nona cidade nuclear da União Soviética",
             "Cidade fantasma desde 27 de Abril de 1986",
             "A cidade de Slavutych foi criada para a evacuação das pessoas desta cidade",
             "Aproximadamente 50 mil pessoas viviam aqui antes da tragédia",
-            "Cidade-sede do maior disastre nuclear do mundo até hoje"
+            "Cidade-sede do maior desastre nuclear do mundo até hoje"
         ]
     },
     {
         "id": 1,
+        "difficulty": 2,
         "coordinates": {
             "lat": 49.370829,
             "lng": -0.8802439
         },
         "name": "Normandy",
         "country": "France",
-        "countryCode": "fr",
+        "countryCode": "FR",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Bel%C3%A9m_Tower",
-        "difficulty": 2,
+        "wikipedia": "https://en.wikipedia.org/wiki/Normandy",
         "tips": [
             "Habitada desde os tempos pré-históricos",
             "Foi parte da Inglaterra até o século 13",
@@ -41,16 +41,16 @@
     },
     {
         "id": 2,
+        "difficulty": 2,
         "coordinates": {
-            "lat": 48.8534413,
-            "lng": 2.3693203
+            "lat": 48.852818,
+            "lng": 2.368912
         },
         "name": "Bastille, Paris",
         "country": "France",
-        "countryCode": "fr",
+        "countryCode": "FR",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Bel%C3%A9m_Tower",
-        "difficulty": 3,
+        "wikipedia": "https://en.wikipedia.org/wiki/Bastille",
         "tips": [
             "Utilizada como prisão na França medieval",
             "Sua queda foi um evento marcante na Revolução Francesa",
@@ -61,16 +61,16 @@
     },
     {
         "id": 3,
+        "difficulty": 2,
         "coordinates": {
             "lat": 52.5077078,
             "lng": 13.3903831
         },
         "name": "Berlin",
         "country": "Germany",
-        "countryCode": "de",
+        "countryCode": "DE",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Bel%C3%A9m_Tower",
-        "difficulty": 1,
+        "wikipedia": "https://en.wikipedia.org/wiki/Berlin_Wall",
         "tips": [
             "Barreira física e ideológica",
             "Demolição ocorreu em 13 de Junho de 1990",
@@ -81,79 +81,79 @@
     },
     {
         "id": 4,
+        "difficulty": 1,
         "coordinates": {
-            "lat": -12.9734903,
-            "lng": -38.5120588
+            "lat": -12.9744346,
+            "lng": -38.5092093
         },
         "name": "Salvador",
         "country": "Brazil",
-        "countryCode": "br",
+        "countryCode": "BR",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Bel%C3%A9m_Tower",
-        "difficulty": 2,
+        "wikipedia": "https://en.wikipedia.org/wiki/Salvador,_Bahia",
         "tips": [
             "Conhecida como a primeira capital do Brasil",
-            "Fundada em 1549",
+            "Quem nasce nesta cidade é chamado de Soteropolitano",
             "A partir de 1985 é considerada Patrimônio da Humanidade",
-            "Maior cidade do nordeste brasileiro, e 4a maior do Brasil",
-            "Quem nasce nesta cidade é chamado de Soteropolitano"
+            "Fundada em 1549",
+            "Maior cidade do nordeste brasileiro, e 4a maior do Brasil"
         ]
     },
     {
         "id": 5,
+        "difficulty": 1,
         "coordinates": {
             "lat": 19.4325922,
             "lng": -99.1331021
         },
         "name": "Tenochtitlan",
         "country": "Mexico",
-        "countryCode": "mx",
+        "countryCode": "MX",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Bel%C3%A9m_Tower",
-        "difficulty": 3,
+        "wikipedia": "https://en.wikipedia.org/wiki/Tenochtitlan",
         "tips": [
             "Capital da Civilização Mexicana",
             "Possuía entre 200 e 400 mil habitantes no momento de sua queda, em 1521",
-            "Invadida peo conquistador espanhol Hernán Cortés",
+            "Invadida pelo conquistador espanhol Hernán Cortés",
             "Maior cidade da América pré-Colombo",
-            "Era considerada a ociedade mais complexa da Mesoamérica em relação à estratificação social"
+            "Era considerada a cidade mais complexa da Mesoamérica em relação à estratificação social"
         ]
     },
     {
         "id": 6,
+        "difficulty": 2,
         "coordinates": {
             "lat": 51.4771394,
             "lng": -0.0006176
         },
         "name": "Greenwich",
         "country": "England",
-        "countryCode": "gb",
+        "countryCode": "GB",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Bel%C3%A9m_Tower",
-        "difficulty": 1,
+        "wikipedia": "https://en.wikipedia.org/wiki/Greenwich",
         "tips": [
             "O horário mundial é baseado em meridiano dado a partir de seu nome",
             "Considerado desde 1997 como patrimônio da humanidade",
-            "",
-            "",
-            ""
+            "Notável por sua história marítima",
+            "Lugar de nascimento de três monarcas da Inglaterra: Henrique VIII, Maria I e Isabel I",
+            "Bairro da capital da Inglaterra"
         ]
     },
     {
         "id": 7,
+        "difficulty": 1,
         "coordinates": {
             "lat": 41.8900672,
             "lng": 12.4935139
         },
         "name": "Colosseum, Rome",
         "country": "Italy",
-        "countryCode": "it",
+        "countryCode": "IT",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Bel%C3%A9m_Tower",
-        "difficulty": 2,
+        "wikipedia": "https://en.wikipedia.org/wiki/Colosseum",
         "tips": [
             "Também conhecido como Anfiteatro Flavio",
-            "Contruído entre os anos de 72 e 80",
+            "Construído entre os anos de 72 e 80",
             "Tinha capacidade entre 50 e 80 mil",
             "Está representado na versão nacional da moeda de cinco centavos de Euro",
             "Considerada uma das 7 maravilhas do mundo"
@@ -161,42 +161,222 @@
     },
     {
         "id": 8,
+        "difficulty": 2,
         "coordinates": {
             "lat": 37.9713115,
             "lng": 23.7262296
         },
         "name": "Parthenon, Athens",
         "country": "Greece",
-        "countryCode": "gr",
+        "countryCode": "GR",
         "description": "",
-        "wikipedia": "https://en.wikipedia.org/wiki/Bel%C3%A9m_Tower",
-        "difficulty": 3,
+        "wikipedia": "https://en.wikipedia.org/wiki/Parthenon",
         "tips": [
             "Monumento dedicado à deusa Atena",
             "Suas esculturas são consideradas o ponto alto da arte grega",
-            "Várias obras de resturação estão sendo feitas desde 1975, a última iniciada está para terminar em 2020",
+            "Várias obras de restauração estão sendo feitas desde 1975, a última iniciada está para terminar em 2020",
             "Seu nome vem de uma palavra que significa \"Apartamento de mulher solteira\"",
             "Em 1687 ocorreu a maior desastre na edificação, por parte da Guerra de Morea quando os Venezianos atacaram Atenas por ordem de Francesco Morosini"
         ]
     },
     {
         "id": 9,
+        "difficulty": 3,
         "coordinates": {
             "lat": 38.6916574,
             "lng": -9.2159039
         },
         "name": "Torre de Belém, Lisboa",
         "country": "Portugal",
-        "countryCode": "pt",
+        "countryCode": "PT",
         "description": "",
         "wikipedia": "https://en.wikipedia.org/wiki/Bel%C3%A9m_Tower",
-        "difficulty": 3,
         "tips": [
             "Localizado no rio Tagus",
-            "Uma das principais contruções do estilo Manuelino, ou Gótico Português Tardio",
-            "ConstruçAo finalizada em 1519",
+            "Uma das principais construções do estilo Manuelino, ou Gótico Português Tardio",
+            "Construção finalizada em 1519",
             "Desde 1983 é considerado um patrimônio da humanidade",
             "Também chamada de Torre de São Vicente"
+        ]
+    },
+    {
+        "id": 10,
+        "difficulty": 3,
+        "coordinates": {
+            "lat": 37.176842,
+            "lng": -3.590396
+        },
+        "name": "Alhambra, Granada",
+        "country": "Spain",
+        "countryCode": "ES",
+        "description": "",
+        "wikipedia": "https://en.wikipedia.org/wiki/Alhambra",
+        "tips": [
+            "Trata-se de um rico complexo palaciano e fortaleza (alcazar ou al-Ksar) que alojava o monarca da dinastia nacérida e a corte do Reino de Granada",
+            "classificado como Património da Humanidade pela UNESCO em 1984",
+            "Localizado no sul da Península Ibérica",
+            "A cidade destacou-se na história como capital dos reinos muçulmanos Zirida (século XI) e Nasrida (séculos XIII a XV)",
+            "Após a conquista pelos Reis Católicos em 1492, manteve-se como capital do reino castelhano de Granada"
+        ]
+    },
+    {
+        "id": 11,
+        "difficulty": 1,
+        "coordinates": {
+            "lat": 41.00753877217594,
+            "lng": 28.97905887177546
+        },
+        "name": "Constantinople, Istanbul",
+        "country": "Turkey",
+        "countryCode": "TR",
+        "description": "",
+        "wikipedia": "https://en.wikipedia.org/wiki/Constantinople",
+        "tips": [
+            "foi a capital do Império Romano (330–395), do Império Bizantino (ou Império Romano do Oriente) (395–1204 e 1261–1453), do Império Latino (1204–1261) e, após a tomada pelos turcos, do Império Otomano (1453–1922)",
+            "No decorrer da Idade Média, foi a maior e mais rica cidade da Europa",
+            "era famosa por suas defesas maciças e complexas. O primeiro muro da cidade por todos os lados",
+            "A cidade ocupa 2 continentes, a Europa e a Ásia",
+            "foi fundada pelo imperador romano Constantino em 324 no local de uma cidade já existente, Bizâncio"
+        ]
+    },
+    {
+        "id": 12,
+        "difficulty": 3,
+        "coordinates": {
+            "lat": 34.1197571669391,
+            "lng": 35.64658513516705
+        },
+        "name": "Biblos, Jubayl",
+        "country": "Lebanon",
+        "countryCode": "LB",
+        "description": "",
+        "wikipedia": "https://en.wikipedia.org/wiki/Byblos",
+        "tips": [
+            "Cidade portuária da antiga Civilização Fenícia",
+            "É daqui que surge o nome da Bíblia",
+            "A cidade encontra-se no leste do Mar Mediterrâneo",
+            "Situa-se na costa mediterrânica do atual Líbano",
+            "Atualmente conhecida pelo nome árabe Jubayl, já foi chamada por Biblos pelos gregos, Gubla pelos fenícios, Kbn e Kpn pelos egípcios"
+        ]
+    },
+    {
+        "id": 13,
+        "difficulty": 3,
+        "coordinates": {
+            "lat": -13.16272246659561,
+            "lng": -72.5450745740734
+        },
+        "name": "Machu Picchu",
+        "country": "Peru",
+        "countryCode": "PE",
+        "description": "",
+        "wikipedia": "https://en.wikipedia.org/wiki/Machu_Picchu",
+        "tips": [
+            "Conhecida como cidade perdida dos Incas",
+            "Está situada no alto de uma montanha",
+            "O lugar foi elevado à categoria de Patrimônio mundial da UNESCO e também é umas das sete maravilhas do mundo moderno",
+            "Apesar de ser uma cidade pré-colombiana (antes do descobrimento da América), somente foi descoberta em 1911",
+            "Encontra-se na América Espanhola"
+        ]
+    },
+    {
+        "id": 14,
+        "difficulty": 1,
+        "coordinates": {
+            "lat": 39.882234,
+            "lng": 116.407472
+        },
+        "name": "Beijing",
+        "country": "China",
+        "countryCode": "CN",
+        "description": "",
+        "wikipedia": "https://en.wikipedia.org/wiki/Beijing",
+        "tips": [
+            "A história da cidade remonta a mais de três milênios",
+		    "Famosa por seus opulentos palácios, templos, parques, jardins, túmulos, muralhas, portões, e por seus tesouros artísticos e universidades, que a tornaram um centro cultural do país",
+     		"Tem sete Patrimônios Mundiais classificados pela UNESCO: a Cidade Proibida, o Templo do Céu, o Palácio de Verão, os Túmulos Imperiais das Dinastias Ming e Qing, o Zhoukoudian, a Grande Muralha e o Grande Canal",
+            "Sede dos jogos olímpicos de 2008",
+            "Capital do país mais populoso do mundo"
+        ]
+    },
+    {
+        "id": 15,
+        "difficulty": 1,
+        "coordinates": {
+            "lat": -33.857721,
+            "lng": 151.215299
+        },
+        "name": "Sydney",
+        "country": "Australia",
+        "countryCode": "AU",
+        "description": "",
+        "wikipedia": "https://en.wikipedia.org/wiki/Sydney",
+        "tips": [
+            "Localizado no país de maior pib per capita do hemisfério sul",
+            "Seu país é conhecido pela fauna exótica e animais como o Canguru marcam a sua identidade",
+            "é a capital do estado de Nova Gales do Sul",
+            "Está localizada na costa sudeste do país, ao longo do mar da Tasmânia e em torno de um dos maiores portos naturais do mundo",
+            "Cidade mais populosa de toda a Oceania"
+        ]
+    },
+    {
+        "id": 16,
+        "difficulty": 1,
+        "coordinates": {
+            "lat": -34.3570860753411,
+            "lng": 18.4756957204801
+        },
+        "name": "Cape of Good Hope, Cape Town",
+        "country": "South Africa",
+        "countryCode": "ZA",
+        "description": "",
+        "wikipedia": "https://en.wikipedia.org/wiki/Cape_of_Good_Hope",
+        "tips": [
+            "Foi descoberto pela primeira vez em 1488 pelo navegador português Bartolomeu Dias",
+            "Chamado primeiramente de cabo das Tormentas, o rei João II de Portugal mudou seu nome que simbolizaria a tão desejada chegada à Índia",
+            "Próximo ao local de encontro dos oceanos Atlântico e índico",
+            "Localizada na Cidade do Cabo",
+		    "Extremo sul do continente africano"
+        ]
+    },
+    {
+        "id": 17,
+        "difficulty": 1,
+        "coordinates": {
+            "lat": 43.722823,
+            "lng": 10.396375
+        },
+        "name": "Tower of Pisa, Pisa",
+        "country": "Italy",
+        "countryCode": "IT",
+        "description": "",
+        "wikipedia": "https://en.wikipedia.org/wiki/Leaning_Tower_of_Pisa",
+        "tips": [
+            "Embora destinada a ficar na vertical, a torre começou a inclinar-se para sudeste",
+            "A construção do primeiro andar começou no dia 9 de agosto de 1173",
+            "Em 1987, a torre foi declarada como parte da Piazza del Duomo e Património Mundial da UNESCO",
+            "Cidade encontra-se à 17 quilômetros do Mar Mediterrâneo",
+            "Tanto a cidade quanto o monumento recebem mesmo nome"
+        ]
+    },
+    {
+        "id": 18,
+        "difficulty": 2,
+        "coordinates": {
+            "lat": 34.39536530389853,
+            "lng": 132.4539246113793
+        },
+        "name": "Hiroshima Peace Memorial, Hiroshima",
+        "country": "Japan",
+        "countryCode": "JP",
+        "description": "",
+        "wikipedia": "https://en.wikipedia.org/wiki/Hiroshima_Peace_Memorial",
+        "tips": [
+            "Monumento chamado de Cúpula Genbaku ou Cúpula da Bomba Atômica",
+            "O edifício foi originalmente projetado pelo arquiteto tcheco Jan Letzel",
+            "Em dezembro de 1996, a construção foi registrada como Patrimônio Mundial da UNESCO",
+            "A cidade está localizada ao sudoeste da maior ilha do país",
+            "Em 6 de agosto de 1945, foi a primeira cidade do mundo arrasada pela bomba atômica de fissão denominada Little Boy, lançada pelo governo dos Estados Unidos, resultando em 250 000 mortos e feridos"
         ]
     }
 ]

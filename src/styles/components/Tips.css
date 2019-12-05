@@ -1,5 +1,6 @@
 .tips-container {
     background: url(../../assets/background.jpg);
+    background-size: cover;
     overflow: hidden;
     position: absolute !important;
     left: 10%;

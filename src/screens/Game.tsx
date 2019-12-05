@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react'
 import StreetView from '../components/StreetView'
 import Guess from '../components/Guess'
 import Details from '../components/Details'
+import Results from '../components/Results'
 import Name from '../components/Name'
 import { useMaps } from '../context/Maps'
 import '../styles/screens/Game.css'
@@ -21,6 +22,7 @@ const GameScreen: React.FC = () => {
   const [board, setBoard] = useState('')
   const [difficulty, setDifficulty] = useState(1)
 
+  const [history, setHistory] = useState<GameGuess[]>([])
   const [finished, setFinished] = useState(false)
 
   const tryGetPlace = useCallback((difficulty: number) => {
@@ -32,8 +34,8 @@ const GameScreen: React.FC = () => {
   }, [getPlace])
 
   const handleGuess = (coordinates: Coordinates) => {
-    const time = (Date.now() - started) / 1000 / 60
-    const minutes = Math.floor(time)
+    const time = Date.now() - started
+    const minutes = Math.floor(time/ 1000 / 60)
     const seconds = Math.floor(((time - minutes) * 60))
     const distance = parseFloat((google.maps.geometry.spherical.computeDistanceBetween(
       new google.maps.LatLng(coordinates),
@@ -41,12 +43,12 @@ const GameScreen: React.FC = () => {
     ) / 1000).toFixed(2))
 
     const guess: GameGuess = {
-      time: {
+      minSec: {
         minutes,
         seconds,
       },
-      // @ts-ignore
-      place,
+      time,
+      place: place!,
       coordinates,
       distance,
     }
@@ -55,11 +57,18 @@ const GameScreen: React.FC = () => {
   }
 
   const handleNext = () => {
+    setHistory(current => {
+      return [
+        ...current,
+        guess!,
+      ]
+    })
+    setBoard('')
+    setGuess(undefined)
+
     if (difficulty === 3) {
       setFinished(true)
     } else {
-      setBoard('')
-      setGuess(undefined)
       setStarted(Date.now())
       setDifficulty(current => current + 1)
     }
@@ -87,9 +96,10 @@ const GameScreen: React.FC = () => {
 
   if (finished) {
     return (
-      <div>
-        Finished!
-      </div>
+      <Results
+        name={name}
+        history={history}
+      />
     )
   }
 

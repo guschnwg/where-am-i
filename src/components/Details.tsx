@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from 'react'
 import { Difficulty, GameGuess } from '../types'
 import '../styles/components/Details.css'
 import { useMaps } from '../context/Maps'
+import Flag from './Flag'
+import milliToMinSec from '../utils/milliToMinSec'
 
 interface DetailsProps {
   guess: GameGuess
@@ -11,6 +13,7 @@ interface DetailsProps {
 const Details: React.FC<DetailsProps> = ({ guess, onClose }) => {
   const { google } = useMaps()
   const ref = useRef(null)
+  const minSec = milliToMinSec(guess.time)
 
   useEffect(() => {
     const mapOptions = {
@@ -28,11 +31,17 @@ const Details: React.FC<DetailsProps> = ({ guess, onClose }) => {
 
     const placeMarker = new google.maps.Marker({
       position: guess.place.coordinates,
+      icon: {
+        url: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+      },
     })
     placeMarker.setMap(map)
 
     const guessMarker = new google.maps.Marker({
       position: guess.coordinates,
+      icon: {
+        url: 'http://maps.google.com/mapfiles/ms/icons/red-pushpin.png',
+      },
     })
     guessMarker.setMap(map)
   }, [
@@ -52,14 +61,16 @@ const Details: React.FC<DetailsProps> = ({ guess, onClose }) => {
         <div
           className="description-container"
         >
-          <img
-            alt={'Bandeira de ' + guess.place.country}
-            src={`https://www.countryflags.io/${guess.place.countryCode}/flat/64.png`}
+          <Flag
+            countryCode={guess.place.countryCode}
+            size="64"
           />
 
           <h2>{guess.place.name} - {guess.place.country}</h2>
 
-          <h3>Você levou {guess.time.minutes} minutos e {guess.time.seconds} segundos.</h3>
+          <h3>
+            Foram necessários {minSec.minutes} minuto{ minSec.minutes !== 1 && 's'} e {minSec.seconds} segundo{ minSec.seconds !== 1 && 's'}.  
+          </h3>
 
           <h4>A distância entre seu palpite e o local correto é de {guess.distance} quilômetros.</h4>
 
