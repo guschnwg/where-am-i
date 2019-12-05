@@ -9,6 +9,7 @@
     background-size: cover;
     display: flex;
     flex-direction: column;
+    overflow: auto;
 }
 
 .results-container h2 {
@@ -64,4 +65,51 @@
     width: 250px;
     height: 250px;
     margin-top: 25px;
+}
+
+.results-container .feedback-container {
+    margin: 30px 0;
+}
+
+.results-container .feedback-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.results-container .feedback-container form label {
+    font-family: 'Irish Grover', cursive;
+    color: white;
+    text-align: center;
+    font-size: 36px;
+    margin: 10px;
+}
+
+.results-container .feedback-container form textarea {
+    width: 50vw !important;
+    height: 300px;
+    font-family: 'Irish Grover', cursive;
+    background: white;
+    color: black;
+    font-size: 24px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 5px solid burlywood;
+    resize: none;
+}
+
+.results-container .feedback-container form button {
+    font-family: 'Irish Grover', cursive;
+    background: burlywood;
+    color: white;
+    margin-top: 20px;
+    font-size: 42px;
+    height: 65px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 5px solid white;
+    cursor: pointer;
+    width: 50vw;
 }

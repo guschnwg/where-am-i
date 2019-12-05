@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { GameGuess } from '../types'
 import '../styles/components/Results.css'
 import milliToMinSec from '../utils/milliToMinSec'
@@ -84,8 +84,24 @@ interface ResultsProps {
 }
 
 const Results: React.FC<ResultsProps> = ({ name, history }) => {
+  const [feedback, setFeedback] = useState('')
+
   const minSec = milliToMinSec(history.reduce<number>((agg, crr) => agg + crr.time, 0))
   const distance = history.reduce<number>((agg, crr) => agg + crr.distance, 0)
+
+  const handleFeedback = () => {
+    fetch('https://firestore.googleapis.com/v1/projects/acessibilidade-5150f/databases/(default)/documents/feedbacks', {
+      method: 'POST',
+      // @ts-ignore
+      fields: JSON.stringify({
+        name,
+        history,
+        minSec,
+        distance,
+        feedback,
+      })
+    }).then(console.log).catch(console.error)
+  }
 
   return (
     <div
@@ -106,6 +122,26 @@ const Results: React.FC<ResultsProps> = ({ name, history }) => {
             guess={guess}
           />
         ))}
+      </div>
+
+      <div
+        className="feedback-container"
+      >
+        <form
+          onSubmit={event => {
+            event.preventDefault()
+            handleFeedback()
+          }}
+        >
+          <label>Deixe a sua opinião abaixo, por favor</label>
+
+          <textarea
+            value={feedback}
+            onChange={event => setFeedback(event.target.value)}
+          ></textarea>
+
+          <button>Confirmar</button>
+        </form>
       </div>
     </div>
   )
